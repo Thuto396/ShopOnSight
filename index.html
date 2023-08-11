@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop On Sight</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header>
+    <h1>Shop On Site</h1>
+    <div id="cart">
+        <p>Cart: <span id="cart-count">0</span></p>
+    </div>
+</header>
 
+<main>
+    <section class="products">
+        <div class="product">
+            <img src="images/product%201.jpg" alt="Product 1">
+            <h2>Soft Jersey</h2>
+            <p>Price: $10</p>
+            <button class="add-to-cart" data-price="10">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/product%202.jpg" alt="Product 2">
+            <h2>Product 2</h2>
+            <p>Price: $15</p>
+            <button class="add-to-cart" data-price="15">Add to Cart</button>
+        </div>
+        <!-- Add more products here -->
+    </section>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
