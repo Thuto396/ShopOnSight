@@ -12,7 +12,8 @@ header {
 }
 
 #cart {
-  float: right;
+  display: flex;
+  align-items: center;
 }
 
 main {
