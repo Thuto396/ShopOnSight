@@ -10,3 +10,9 @@ addToCartButtons.forEach(button => {
     cartCount.textContent = cartItems;
   });
 });
+
+const cartButton = document.getElementById('cart-button');
+
+cartButton.addEventListener('click', () => {
+  window.location.href = 'cart.html';
+});
