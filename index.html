@@ -32,10 +32,37 @@
             <p>Price: R1500</p>
             <button class="add-to-cart" data-price="1500">Add to Cart</button>
         </div>
-        <!-- Add more products here -->
+        <div class="product">
+            <img src="images/product%203.jpg" alt="Product 3">
+            <h2>Plain White Tee</h2>
+            <p>Price: R250</p>
+            <button class="add-to-cart" data-price="1000">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="images/product%204.jpg" alt="Product 4">
+            <h2>Wool Sweater</h2>
+            <p>Price: R1000</p>
+            <button class="add-to-cart" data-price="1000">Add to Cart</button>
+        </div>
+
+
+
     </section>
 </main>
 
 <script src="script.js"></script>
+<script>
+      const cartButton = document.getElementById('cart-button');
+
+
+  const cartData = [
+    { name: 'Product 1', price: 500 }
+  ];
+
+  cartButton.addEventListener('click', () => {
+    localStorage.setItem('cart', JSON.stringify(cartData));
+    window.location.href = 'cart.html';
+  });
+</script>
 </body>
 </html>

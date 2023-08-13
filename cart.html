@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Your Shopping Cart</h1>
+    <button id="back-button">Back to Shopping</button>
+
+</header>
+
+
+
+<main>
+    <section class="cart-items">
+        <!-- Items will be dynamically added here using JavaScript -->
+    </section>
+
+    <section class="total">
+        <p>Total Amount: <span id="total-amount">R0</span></p>
+    </section>
+</main>
+
+<script src="script.js"></script>
+<script>
+  const cartItems = document.querySelector('.cart-items');
+  const totalAmount = document.getElementById('total-amount');
+
+
+  const cartData = JSON.parse(localStorage.getItem('cart'));
+
+
+  cartData.forEach(item => {
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+    cartItem.innerHTML = `
+      <img src="images/product 1.jpg" alt="${item.name}">
+      <div class="item-details">
+        <h2>${item.name}</h2>
+        <p>Price: $R{item.price}</p>
+      </div>
+    `;
+    cartItems.appendChild(cartItem);
+  });
+
+
+  const total = cartData.reduce((sum, item) => sum + item.price, 0);
+  totalAmount.textContent = `$R{total.toFixed(2)}`;
+   const backButton = document.getElementById('back-button');
+   backButton.addEventListener('click', () => {
+    window.location.href = 'index.html';
+
+
+</script>
+</body>
+</html>
+
